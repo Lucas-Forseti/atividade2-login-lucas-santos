@@ -1,0 +1,270 @@
+string(14092) "<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="sKc7sfN5JR55hkQH1T4R9vtKGMmmPHpQhh16Wbc8">
+    <title>Registro de Ponto Eletrônico</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://192.168.1.98:81/css/app.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+            <div class="container">
+                                                        <a class="navbar-brand" href="http://192.168.1.98:81/panel">
+                        Registro de Ponto Eletrônico
+                    </a>
+                                                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                                                    <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    LUCAS OLIVEIRA SANTOS <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+                                                                
+                                    <a class="dropdown-item text-center" href="http://192.168.1.98:81/redefine">Mudar Senha</a>
+
+                                    <div class="dropdown-divider"></div>
+                                    
+                                    <a class="dropdown-item text-center" href="http://192.168.1.98:81/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><strong> Sair </strong></a>
+
+                                    <form id="logout-form" action="http://192.168.1.98:81/logout" method="POST" style="display: none;">
+                                        <input type="hidden" name="_token" value="sKc7sfN5JR55hkQH1T4R9vtKGMmmPHpQhh16Wbc8">                                    </form>
+                                </div>
+                            </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="py-4">
+            <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            
+            
+            
+            
+            
+            
+            
+
+
+
+            <table class="table table-bordered p-3 mb-2 bg-white text-dark text-center">
+                <thead>
+                <tr>
+                    <th> <span class="fa fa-hourglass-start" aria-hidden="true"></span> </th>
+                    <th> <span class="fa fa-bed" aria-hidden="true"></span> </th>
+                    <th> <span class="fa fa-briefcase" aria-hidden="true"></span> </th>
+                    <th> <span class="fa fa-hourglass-end" aria-hidden="true"></span> </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                                            <td>07:52:23</td>
+                    
+                                            <td><span class="fa fa-times" aria-hidden="true"></span></td>
+                    
+                                            <td><span class="fa fa-times" aria-hidden="true"></span></td>
+                    
+                                            <td><span class="fa fa-times" aria-hidden="true"></span></td>
+                                    </tr>
+                </tbody>
+            </table>
+
+            <div class="card card-default">
+
+                <div class="card-header">
+                    Registro de horário
+
+                    <div class="float-right">
+                    
+                    </div><br>
+                </div>
+
+
+
+                <div class="card-body">
+                    <form id="form-checkin" method="POST" action="http://192.168.1.98:81/panel">
+                        <input type="hidden" name="_token" value="sKc7sfN5JR55hkQH1T4R9vtKGMmmPHpQhh16Wbc8">                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label for="acao">Ação</label>
+                                <select class="form-control" id="acao" name="acao" required autofocus>
+                                    <option disabled selected value>SELECIONE UMA AÇÃO</option>
+                                                                                                            <option disabled value="INICIO DE EXPEDIENTE">INICIO DE EXPEDIENTE</option>
+                                                                                                                                                <option value="SAIDA PARA O INTERVALO">SAIDA PARA O INTERVALO</option>
+                                                                                                                                                <option value="RETORNO DO INTERVALO">RETORNO DO INTERVALO</option>
+                                                                                                                                                <option value="FINAL DE EXPEDIENTE">FINAL DE EXPEDIENTE</option>
+                                                                                                        </select>
+
+                                <!---->
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label for="observacao">Observação</label>
+                                <textarea class="form-control" id="observacao" name="observacao"></textarea>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-12" align="center">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-confirm"> Marcar Ponto </button>
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal_ponto"> Ver marcações </button>
+                                <!--<button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal"> Gerar Relatório </button>-->
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal_balance">  Relatório Saldo de horas </button>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Resumo de Horas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <form id="report-form" method="POST" action="http://192.168.1.98:81/colaborador/65/report">
+                        <input type="hidden" name="_token" value="sKc7sfN5JR55hkQH1T4R9vtKGMmmPHpQhh16Wbc8">                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="inicio">Inicio</label>
+                                <input type="date" class="form-control" id="inicio" name="inicio">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="fim">Fim</label>
+                                <input type="date" class="form-control" id="fim" name="fim">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <small class="text-muted">Se as datas não forem informadas, serão filtrados os registros pelo dia atual.</small>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"> Fechar </button>
+                <button type="button" class="btn btn-success" onclick="$('#report-form').submit(); $('#modal').modal('hide');"> Gerar </button>
+            </div>
+        </div>
+    </div>
+</div><div class="modal fade" id="modal_ponto" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Alterar marcação de ponto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <form id="ponto-form" method="GET" action="http://192.168.1.98:81/colaborador/65/ponto">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="inicio">Inicio</label>
+                                <input type="date" class="form-control" id="inicio" name="inicio">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="fim">Fim</label>
+                                <input type="date" class="form-control" id="fim" name="fim">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"> Fechar </button>
+                <button type="button" class="btn btn-success" onclick="$('#ponto-form').submit(); $('#modal_ponto').modal('hide');"> Gerar </button>
+            </div>
+        </div>
+    </div>
+</div><div class="modal fade" id="modal_balance" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Saldo de Horas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <form id="report-balance-form" method="POST" action="http://192.168.1.98:81/colaborador/65/reportbalance">
+                        <input type="hidden" name="_token" value="sKc7sfN5JR55hkQH1T4R9vtKGMmmPHpQhh16Wbc8">                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="inicio">Inicio</label>
+                                <input type="date" class="form-control" id="inicio" name="inicio">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="fim">Fim</label>
+                                <input type="date" class="form-control" id="fim" name="fim">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"> Fechar </button>
+                <button type="button" class="btn btn-success" onclick="$('#report-balance-form').submit(); $('#modal_balance').modal('hide');"> Gerar </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-confirm" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel"> Registrar Horário </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+
+                    Deseja gravar informação?
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"  data-dismiss="modal"> Não </button>
+                <button type="button" class="btn btn-success" onclick="$('#form-checkin ').submit(); $('#modal-confirm').modal('hide');"> Sim </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        </main>
+
+    </div>
+    <script src="http://192.168.1.98:81/js/app.js"></script>
+</body>
+</html>
+"
