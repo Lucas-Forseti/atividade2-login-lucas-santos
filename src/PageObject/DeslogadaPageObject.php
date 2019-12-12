@@ -4,7 +4,7 @@
 namespace Forseti\Bot\PontoLogin\PageObject;
 
 
-class DeslogadaPageObject
+class DeslogadaPageObject extends AbstractPageObject
 {
 
 }
